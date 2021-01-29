@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
+const bookRoutes = require("./routes/book");
 
 const URL = process.env.MONGODB_URI || "mongodb://localhost/booksDB";
 
@@ -24,7 +24,7 @@ app.use(express.json());
 //     app.use(express.static('build'));
 // }
 
-
+app.use(bookRoutes);
 
 const PORT = process.env.PORT || 3001;
 
