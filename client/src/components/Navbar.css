@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem 3rem;
+}
+
+nav .app-name {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+nav .link {
+    margin-right: 1rem;
+    text-decoration: none;
+}
