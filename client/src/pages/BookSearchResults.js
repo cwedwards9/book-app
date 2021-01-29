@@ -36,7 +36,7 @@ class BookSearchResults extends Component {
                 </section>
 
                 <section className="BookSearchResults-Description">
-                    <img src={imageLinks.thumbnail} alt={title}/>
+                    { imageLinks ? <img src={imageLinks.thumbnail} alt={title}/> : <p>No Image</p> }
                     <p>{description}</p>
                 </section>
             </main>
