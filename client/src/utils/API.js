@@ -7,6 +7,10 @@ const API = {
                 q: query 
             }
         });
+    },
+
+    saveBook(query) {
+        return axios.post("/api/books", query)
     }
 }
 
