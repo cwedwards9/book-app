@@ -1,17 +1,27 @@
 nav {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1.5rem 3rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1.5rem 2rem;
+    background-color: black;
 }
 
 nav .app-name {
     font-size: 1.25rem;
     margin-right: 1rem;
     text-decoration: none;
+    color: #ffffff;
+}
+nav .app-name:hover {
+    color: #cbd7da;
 }
 
 nav .link {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
     text-decoration: none;
+    color: #ffffff;
+}
+
+nav .link:hover { 
+    color: #cbd7da;
 }
