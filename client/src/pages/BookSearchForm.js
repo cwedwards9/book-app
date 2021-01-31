@@ -5,7 +5,7 @@ import { API } from "../utils/API";
 class BookSearchForm extends Component {
     constructor(props) {
         super(props);
-        this.state = { search: "", books: [] };
+        this.state = { search: "", books: [], hideLoader: true };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -16,10 +16,11 @@ class BookSearchForm extends Component {
     }
     handleSubmit(evt) {
         evt.preventDefault();
+        this.setState({hideLoader: false});
 
         API.searchBooks(this.state.search)
             .then(books => {
-                this.setState({ books: books.data });
+                this.setState({ books: books.data, hideLoader: true });
             })
     }
 
@@ -37,18 +38,22 @@ class BookSearchForm extends Component {
                     <button id="search-btn">Search</button>
                 </form>
 
-                <div className="ResultList">
-                    {this.state.books.map(book => (
-                        <BookSearchResults
-                            key={book.id}
-                            id={book.id}
-                            info={book.volumeInfo}
-                        />
-                    ))}
-                </div>
+                {this.state.hideLoader ? (
+                    <div className="ResultList">
+                        {this.state.books.map(book => (
+                            <BookSearchResults
+                                key={book.id}
+                                id={book.id}
+                                info={book.volumeInfo}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="loader"></div>
+                )}
 
             </main>
-        )
+        );
     }
 }
 
