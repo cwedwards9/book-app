@@ -9,7 +9,7 @@ class SavedBooksItem extends Component {
                 <div className="saved-heading">
                     <div className="saved-title">
                         <h2>{title}</h2>
-                        <p>{authors}</p>
+                        { authors.map((author, index) => <p className="author" key={index}>{author} </p>) }
                     </div>
                     <div className="saved-buttons">
                         <button onClick={ () => deleteBook(id) }>Remove</button>
