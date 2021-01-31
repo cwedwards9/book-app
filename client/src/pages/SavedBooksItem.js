@@ -13,7 +13,7 @@ class SavedBooksItem extends Component {
                     </div>
                     <div className="saved-buttons">
                         <button onClick={ () => deleteBook(id) }>Remove</button>
-                        <a href={link}>More Info</a>
+                        <a href={link} target="_blank" rel="noreferrer">More Info</a>
                     </div>
                 </div>
                 <div className="saved-body">

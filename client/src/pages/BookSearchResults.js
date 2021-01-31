@@ -34,7 +34,7 @@ class BookSearchResults extends Component {
                             ? <button><i class="fas fa-check"></i> Saved</button> 
                             : <button onClick={this.handleSave}>Save</button> 
                         }
-                        <a href={infoLink}>More Info</a>
+                        <a href={infoLink} target="_blank" rel="noreferrer">More Info</a>
                     </div>
                 </div>
                 <div className="results-body">
