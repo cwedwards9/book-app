@@ -6,9 +6,11 @@ class Navbar extends Component {
     render() {
         return (
             <nav>
-                <a href="/" className="app-name">Book Search App</a>
-                <NavLink exact className="link" activeClassName="active-link" to="/">Search Book</NavLink>
-                <NavLink exact className="link" activeClassName="active-link" to="/books">Saved Books</NavLink>
+                <a href="/" className="app-name"><i className="fas fa-book"></i> Book Search App</a>
+                <div>
+                    <NavLink exact className="link" activeClassName="active-link" to="/"><i className="fas fa-search"></i> Search Book</NavLink>
+                    <NavLink exact className="link" activeClassName="active-link" to="/books"><i className="far fa-bookmark"></i> Saved Books</NavLink>
+                </div>
             </nav>
         );
     }
