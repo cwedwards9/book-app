@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
 }
 
 .saved-title h2 {
@@ -22,12 +22,13 @@
 }
 
 .saved-title p {
-    margin: 0 0 1rem;
+    margin: 0 0 0.25rem;
 }
 
 
 .saved-buttons {
     padding: 0.25rem;
+    min-width: 175px;
 }
 
 .saved-buttons button {
@@ -35,19 +36,27 @@
     padding: 0.35rem 1rem;
     border: none;
     border-radius: 0.75rem;
-    background-color: #244c6c;
+    background-color: #5cbc84;
     color: white;
+    cursor: pointer;
+}
+.saved-buttons button:focus {
+    outline: none;
 }
 
 .saved-buttons a {
-    border: 1px solid #244c6c;
+    border: 1px solid #5cbc84;
     border-radius: 0.75rem;
     padding: 0.25rem 1rem;
     background-color: white;
-    color: #244c6c;
+    color: #5cbc84;
     font-size: 0.8rem;
     font-weight: bold;
     text-decoration: none;
+}
+.saved-buttons a:hover {
+    background-color: #5cbc84;
+    color: white;
 }
 
 
