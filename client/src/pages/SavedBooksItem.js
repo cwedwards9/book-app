@@ -1,18 +1,26 @@
 import React, { Component } from "react";
-
+import "./SavedBooks.css";
 
 class SavedBooksItem extends Component {
     render() {
         const { id, title, authors, description, image, link, deleteBook } = this.props;
         return (
-            <div className="SavedBooksItem">
-                        <p>{title}</p>
+            <section className="SavedBooksItem">
+                <div className="saved-heading">
+                    <div className="saved-title">
+                        <h2>{title}</h2>
                         <p>{authors}</p>
-                        <p>{description}</p>
-                        <img src={image} alt={title} />
+                    </div>
+                    <div className="saved-buttons">
+                        <button onClick={ () => deleteBook(id) }>Remove</button>
                         <a href={link}>More Info</a>
-                        <button onClick={ () => deleteBook(id) }>Delete</button>
-            </div>
+                    </div>
+                </div>
+                <div className="saved-body">
+                    <img src={image} alt={title} />
+                    <p>{description}</p>
+                </div>
+            </section>
         );
     }
 }

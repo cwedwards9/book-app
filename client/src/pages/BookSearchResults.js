@@ -21,25 +21,24 @@ class BookSearchResults extends Component {
         });
     }
     render() {
-        const { title, authors, description, imageLinks, infoLink } = this.props.info;
+        const { title, authors, description, imageLinks, infoLink, publishedDate } = this.props.info;
         return (
-            <main className="BookSearchResults">
-                <section className="BookSearchResults-Title">
-                    <div>
-                        <p>{title}</p>
-                        <p>{authors}</p>
+            <section className="BookSearchResult">
+                <div className="results-heading">
+                    <div className="results-title">
+                        <h2>{title}</h2>
+                        {authors ? authors.map((author, index) => <p className="author" key={index}>{author} </p>) : <p>-</p>}
                     </div>
-                    <div>
-                        <a href={infoLink}>More Info</a>
+                    <div className="results-buttons">
                         <button onClick={this.handleSave}>Save</button>
+                        <a href={infoLink}>More Info</a>
                     </div>
-                </section>
-
-                <section className="BookSearchResults-Description">
-                    { imageLinks ? <img src={imageLinks.thumbnail} alt={title}/> : <p>No Image</p> }
+                </div>
+                <div className="results-body">
+                    { imageLinks ? <img src={imageLinks.thumbnail} alt={title}/> : <p className="no-image">No Image</p> }
                     <p>{description}</p>
-                </section>
-            </main>
+                </div>
+            </section>
         )
     }
 }
