@@ -25,7 +25,7 @@ class BookSearchForm extends Component {
 
     render() {
         return (
-            <div className="BookSearchForm">
+            <main className="BookSearch">
                 <h1>Search For a Book</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input
@@ -34,18 +34,21 @@ class BookSearchForm extends Component {
                         value={this.state.search}
                         onChange={this.handleChange}
                     />
-                    <button>Search</button>
+                    <button id="search-btn">Search</button>
                 </form>
 
-                {this.state.books.map(book => (
-                    <BookSearchResults
-                        key={book.id}
-                        id={book.id}
-                        info={book.volumeInfo}
-                    />
-                ))}
+                <div className="ResultList">
+                    {this.state.books.map(book => (
+                        <BookSearchResults
+                            key={book.id}
+                            id={book.id}
+                            search={this.state.search}
+                            info={book.volumeInfo}
+                        />
+                    ))}
+                </div>
 
-            </div>
+            </main>
         )
     }
 }
