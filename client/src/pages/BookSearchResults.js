@@ -5,23 +5,23 @@ import "./BookSearch.css";
 class BookSearchResults extends Component {
     constructor(props) {
         super(props);
-        this.state = { title: "", authors: "", description: "", image: "", link: "" };
+        this.state = { isSaved: false };
         this.handleSave = this.handleSave.bind(this);
     }
     handleSave() {
         const { title, authors, description, imageLinks, infoLink } = this.props.info;
-        this.setState({
+        API.saveBook({
             title: title, 
             authors: authors, 
             description: description, 
             image: imageLinks.thumbnail, 
             link: infoLink
-        }, () => {
-            API.saveBook(this.state);
         });
+
+        this.setState({ isSaved: !this.state.isSaved });
     }
     render() {
-        const { title, authors, description, imageLinks, infoLink, publishedDate } = this.props.info;
+        const { title, authors, description, imageLinks, infoLink } = this.props.info;
         return (
             <section className="BookSearchResult">
                 <div className="results-heading">
@@ -30,7 +30,10 @@ class BookSearchResults extends Component {
                         {authors ? authors.map((author, index) => <p className="author" key={index}>{author} </p>) : <p>-</p>}
                     </div>
                     <div className="results-buttons">
-                        <button onClick={this.handleSave}>Save</button>
+                        {this.state.isSaved 
+                            ? <button><i class="fas fa-check"></i> Saved</button> 
+                            : <button onClick={this.handleSave}>Save</button> 
+                        }
                         <a href={infoLink}>More Info</a>
                     </div>
                 </div>
@@ -39,7 +42,7 @@ class BookSearchResults extends Component {
                     <p>{description}</p>
                 </div>
             </section>
-        )
+        );
     }
 }
 
