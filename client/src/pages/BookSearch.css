@@ -1,0 +1,105 @@
+.BookSearch h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.BookSearch input {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 45%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    background-color: white;
+    border: none;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+.BookSearch input:focus {
+    outline: none;
+    background-color: white;
+}
+
+#search-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: #244c6c;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#search-btn:focus {
+    outline: none;
+}
+
+
+
+.ResultList {
+    padding-top: 3rem;
+}
+
+.BookSearchResult {
+    margin: 0 auto 4rem;
+    width: 80vw;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.results-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.results-title h2 {
+    margin: 0 0 1rem;
+}
+
+.results-title p {
+    margin: 0 0 1rem;
+}
+
+
+.results-buttons {
+    padding: 0.25rem;
+}
+
+.results-buttons button {
+    margin-right: 0.5rem;
+    padding: 0.35rem 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: #244c6c;
+    color: white;
+}
+
+.results-buttons a {
+    border: 1px solid #244c6c;
+    border-radius: 0.75rem;
+    padding: 0.25rem 1rem;
+    background-color: white;
+    color: #244c6c;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.results-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.results-body img {
+    margin-right: 2rem;
+}
+
+
+
+
