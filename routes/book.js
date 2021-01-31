@@ -8,7 +8,6 @@ const apiKey = process.env.API_KEY;
 
 // search for books with the Google Books API
 router.get("/search", (req, res) => {
-    console.log(req.query.q);
     axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.query.q}&maxResults=20&key=${apiKey}`)
         .then(books => {
             res.json(books.data.items);

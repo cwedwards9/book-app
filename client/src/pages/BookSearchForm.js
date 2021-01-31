@@ -42,7 +42,6 @@ class BookSearchForm extends Component {
                         <BookSearchResults
                             key={book.id}
                             id={book.id}
-                            search={this.state.search}
                             info={book.volumeInfo}
                         />
                     ))}
