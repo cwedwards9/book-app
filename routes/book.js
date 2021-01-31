@@ -15,7 +15,7 @@ router.get("/search", (req, res) => {
 });
 
 // get - return all saved books 
-router.get("/api/books", (req, res) => {
+router.get("/books", (req, res) => {
     Book.find({})
         .then(books => {
             res.json(books);
@@ -24,7 +24,7 @@ router.get("/api/books", (req, res) => {
 
 
 // post - save a new book to the db
-router.post("/api/books", (req, res) => {
+router.post("/books", (req, res) => {
     Book.create(req.body)
         .then(() => {
             res.end();
@@ -33,7 +33,7 @@ router.post("/api/books", (req, res) => {
 
 
 // delete - delete a book from the db
-router.delete("/api/books/:id", (req, res) => {
+router.delete("/books/:id", (req, res) => {
     Book.findByIdAndDelete(req.params.id)
         .then(() => {
             res.end();
